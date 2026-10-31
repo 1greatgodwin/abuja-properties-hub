@@ -428,3 +428,531 @@
 
 </body>
 </html>
+
+<!-- ACCOUNT SECTION -->
+<section class="section wrap" id="account">
+
+  <h2>Property Owner Portal</h2>
+  <p>
+    Create a free account to advertise properties
+    and manage your listings.
+  </p>
+
+  <div id="authPanel">
+
+    <div class="portal-card">
+
+      <h3>Create Your Account</h3>
+
+      <form id="registerForm">
+
+        <div class="field">
+          <label for="registerName">
+            Your Name or Business Name
+          </label>
+          <input
+            id="registerName"
+            type="text"
+            maxlength="120"
+            required
+            placeholder="Enter your name or company name"
+          >
+        </div>
+
+        <div class="field">
+          <label for="registerType">
+            Account Type
+          </label>
+          <select id="registerType" required>
+            <option value="landlord">Landlord</option>
+            <option value="agent">Property Agent</option>
+            <option value="company">Real Estate Company</option>
+            <option value="land_seller">Land Seller</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="registerEmail">Email</label>
+          <input
+            id="registerEmail"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="registerPassword">Password</label>
+          <input
+            id="registerPassword"
+            type="password"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          Create Free Account
+        </button>
+
+      </form>
+
+      <p id="registerMessage" role="status"></p>
+
+      <hr>
+
+      <h3>Already Have an Account?</h3>
+
+      <form id="loginForm">
+
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input
+            id="loginEmail"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input
+            id="loginPassword"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          Sign In
+        </button>
+
+      </form>
+
+      <p id="loginMessage" role="status"></p>
+
+    </div>
+  </div>
+
+  <!-- LOGGED-IN DASHBOARD -->
+
+  <div id="dashboardPanel" hidden>
+
+    <div class="portal-card">
+
+      <h3>My Dashboard</h3>
+
+      <p id="signedInUser"></p>
+
+      <button
+        id="logoutButton"
+        type="button"
+        class="btn btn-outline"
+      >
+        Sign Out
+      </button>
+
+      <hr>
+
+      <h3>My Business Profile</h3>
+
+      <form id="profileForm">
+
+        <div class="field">
+          <label for="profileName">
+            Display Name / Company Name
+          </label>
+          <input
+            id="profileName"
+            type="text"
+            maxlength="120"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="profileType">Account Type</label>
+          <select id="profileType" required>
+            <option value="landlord">Landlord</option>
+            <option value="agent">Property Agent</option>
+            <option value="company">Real Estate Company</option>
+            <option value="land_seller">Land Seller</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileWhatsapp">
+            Business WhatsApp Number
+          </label>
+          <input
+            id="profileWhatsapp"
+            type="tel"
+            placeholder="08012345678"
+          >
+        </div>
+
+        <div class="field">
+          <label for="profileBio">
+            About Your Business
+          </label>
+          <textarea
+            id="profileBio"
+            rows="4"
+            placeholder="Tell customers about your business"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label for="profileLogo">
+            Business Logo
+          </label>
+          <input
+            id="profileLogo"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+          >
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          Save Business Profile
+        </button>
+
+      </form>
+
+      <p id="profileMessage" role="status"></p>
+
+      <div class="field">
+        <label for="catalogueLink">
+          My Shareable Property Catalogue
+        </label>
+
+        <input
+          id="catalogueLink"
+          type="text"
+          readonly
+        >
+
+        <button
+          id="copyCatalogueButton"
+          type="button"
+          class="btn btn-outline"
+        >
+          Copy Catalogue Link
+        </button>
+      </div>
+
+    </div>
+
+    <!-- PROPERTY UPLOAD -->
+
+    <div class="portal-card">
+
+      <h3 id="propertyFormHeading">
+        Upload a New Property
+      </h3>
+
+      <p>
+        Add your property information and photos.
+        Listings are free.
+      </p>
+
+      <form id="propertyForm">
+
+        <input
+          type="hidden"
+          id="editingPropertyId"
+        >
+
+        <div class="field">
+          <label for="propertyTitle">
+            Property Title
+          </label>
+          <input
+            id="propertyTitle"
+            type="text"
+            maxlength="160"
+            required
+            placeholder="Beautiful 3 Bedroom Apartment"
+          >
+        </div>
+
+        <div class="field">
+          <label for="propertyListingType">
+            Listing Category
+          </label>
+          <select id="propertyListingType" required>
+            <option value="rent">For Rent</option>
+            <option value="sale">For Sale</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="propertyType">
+            Property Type
+          </label>
+
+          <input
+            id="propertyType"
+            list="uploadPropertyTypes"
+            required
+            placeholder="Select or type your property type"
+          >
+
+          <datalist id="uploadPropertyTypes">
+            <option value="Apartment">
+            <option value="Duplex">
+            <option value="Detached House">
+            <option value="Terrace">
+            <option value="Bungalow">
+            <option value="Self-contained">
+            <option value="Land">
+            <option value="Commercial Property">
+            <option value="Office Space">
+            <option value="Shop">
+          </datalist>
+        </div>
+
+        <div class="field">
+          <label for="propertyLocation">
+            Exact Property Location
+          </label>
+
+          <input
+            id="propertyLocation"
+            list="uploadLocations"
+            required
+            placeholder="Select or type any Abuja location"
+          >
+
+          <datalist id="uploadLocations">
+            <option value="Maitama">
+            <option value="Asokoro">
+            <option value="Wuse">
+            <option value="Gwarinpa">
+            <option value="Kubwa">
+            <option value="Lugbe">
+            <option value="Katampe">
+            <option value="Jabi">
+            <option value="Lokogoma">
+            <option value="Life Camp">
+          </datalist>
+        </div>
+
+        <div class="field">
+          <label for="propertyPrice">
+            Property Price in Naira (₦)
+          </label>
+          <input
+            id="propertyPrice"
+            type="number"
+            min="0"
+            step="1"
+            required
+            placeholder="2500000"
+          >
+        </div>
+
+        <div class="field">
+          <label for="propertyBedrooms">
+            Number of Bedrooms
+          </label>
+          <input
+            id="propertyBedrooms"
+            type="number"
+            min="0"
+            step="1"
+            placeholder="Enter number of bedrooms"
+          >
+        </div>
+
+        <div class="field">
+          <label for="propertyBathrooms">
+            Number of Bathrooms
+          </label>
+          <input
+            id="propertyBathrooms"
+            type="number"
+            min="0"
+            step="1"
+            placeholder="Enter number of bathrooms"
+          >
+        </div>
+
+        <div class="field">
+          <label for="propertyDescription">
+            Property Description
+          </label>
+          <textarea
+            id="propertyDescription"
+            rows="5"
+            placeholder="Describe the property and its features"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label for="propertyWhatsapp">
+            Contact WhatsApp Number
+          </label>
+          <input
+            id="propertyWhatsapp"
+            type="tel"
+            required
+            placeholder="08012345678"
+          >
+        </div>
+
+        <div class="field">
+          <label for="propertyPhotos">
+            Upload Property Photos
+          </label>
+
+          <div class="upload-zone">
+            <p>Choose clear photos of your property</p>
+
+            <input
+              id="propertyPhotos"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+            >
+
+            <small>
+              Maximum 5 photos.
+              Maximum 5 MB per photo.
+            </small>
+          </div>
+
+          <div
+            id="photoPreview"
+            class="photo-preview"
+          ></div>
+        </div>
+
+        <button
+          id="publishPropertyButton"
+          class="btn btn-primary"
+          type="submit"
+        >
+          Publish Property
+        </button>
+
+        <button
+          id="cancelEditButton"
+          class="btn btn-outline"
+          type="button"
+          hidden
+        >
+          Cancel Editing
+        </button>
+
+      </form>
+
+      <p id="propertyMessage" role="status"></p>
+
+    </div>
+
+    <!-- MY LISTINGS -->
+
+    <div class="portal-card">
+
+      <h3>Manage My Properties</h3>
+
+      <p>
+        Edit, delete, publish or unpublish
+        your properties.
+      </p>
+
+      <div id="myProperties">
+        Loading your properties...
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  .portal-card {
+    background: white;
+    border: 1px solid #e5eaf0;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 25px 0;
+    box-shadow: 0 8px 28px rgba(16,36,58,.05);
+  }
+
+  .portal-card h3 {
+    font-family: Manrope, sans-serif;
+    margin-top: 0;
+    font-size: 23px;
+  }
+
+  .portal-card .field {
+    margin-bottom: 20px;
+  }
+
+  .portal-card input,
+  .portal-card select,
+  .portal-card textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce3eb;
+    border-radius: 9px;
+    background: white;
+  }
+
+  .portal-card textarea {
+    resize: vertical;
+  }
+
+  .portal-card button {
+    margin: 8px 8px 8px 0;
+  }
+
+  .upload-zone {
+    padding: 25px;
+    border: 2px dashed #c5a46d;
+    border-radius: 14px;
+    background: #f5f3ef;
+    text-align: center;
+  }
+
+  .upload-zone input {
+    background: transparent;
+  }
+
+  .photo-preview {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(110px, 1fr)
+    );
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .photo-preview img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 9px;
+  }
+
+  #registerMessage,
+  #loginMessage,
+  #profileMessage,
+  #propertyMessage {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  @media (max-width: 550px) {
+    .portal-card {
+      padding: 18px;
+    }
+  }
+</style>
