@@ -1,958 +1,336 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10243a">
-  <meta name="description" content="Find homes to rent and properties to buy across Abuja.">
+  <meta name="theme-color" content="#087f50">
+  <meta name="description" content="Find homes to rent and properties to buy across Abuja. Contact Abuja Properties Hub directly on WhatsApp.">
   <title>Abuja Properties Hub | Rent • Buy • Invest</title>
-
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --navy: #10243a;
-      --navy-dark: #071526;
-      --gold: #c5a46d;
-      --ivory: #f5f3ef;
-      --white: #ffffff;
-      --muted: #66758a;
-      --border: #e5eaf0;
-    }
+    :root{--green:#078653;--green-dark:#056b42;--mint:#e9f7ef;--ink:#13263c;--muted:#66758a;--line:#e5eaf0;--paper:#fff;--bg:#f7f9fb;--shadow:0 12px 36px rgba(19,38,60,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,select{ -webkit-tap-highlight-color:transparent}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{height:76px;display:flex;align-items:center;background:#fff;border-bottom:1px solid #eef1f4;position:relative;z-index:5}.nav{display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-size:21px;font-weight:800;letter-spacing:-.8px;white-space:nowrap}.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--green);display:grid;place-items:center;color:white;font-size:24px}.brand span em{font-style:normal;color:var(--green)}.tagline{font-size:10px;letter-spacing:2px;color:#748195;margin-top:1px;font-weight:700}.navlinks{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:700}.navlinks a:hover{color:var(--green)}.nav-actions{display:flex;align-items:center;gap:12px}.btn{border:0;border-radius:10px;padding:13px 18px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;transition:.2s}.btn-green{background:var(--green);color:white;box-shadow:0 5px 14px #07865325}.btn-green:hover{background:var(--green-dark);transform:translateY(-1px)}.btn-light{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn-light:hover{border-color:var(--green);color:var(--green)}.mobile-menu{display:none;background:none;border:0;font-size:24px;color:var(--ink)}
+    .hero{position:relative;min-height:390px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(8,23,37,.78) 0%,rgba(8,23,37,.52) 47%,rgba(8,23,37,.1) 100%),url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2000&q=85') center 48%/cover no-repeat;color:white}.hero-content{padding:60px 0 90px;max-width:650px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#c9f6df;margin-bottom:16px}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(38px,5.5vw,64px);line-height:1.05;letter-spacing:-2.4px;margin:0 0 18px;font-weight:800}.hero h1 span{color:#45d79a}.hero p{font-size:16px;line-height:1.75;max-width:510px;color:#f0f4f7;margin:0}.search-panel{position:relative;margin-top:-52px;z-index:2;background:white;padding:20px;border:1px solid #e9edf1;border-radius:16px;box-shadow:var(--shadow)}.search-tabs{display:flex;gap:8px;margin-bottom:18px}.tab{border:0;border-radius:9px;padding:11px 19px;background:#f2f5f7;color:#607084;font-weight:800;cursor:pointer}.tab.active{background:var(--green);color:#fff}.search-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr .9fr auto;gap:12px;align-items:end}.field label{display:block;font-size:11px;font-weight:800;color:#4c5b6d;margin:0 0 8px}.field select,.field input{width:100%;height:45px;border:1px solid #dfe5eb;border-radius:8px;padding:0 12px;color:#35475b;background:#fff;outline:none}.field select:focus,.field input:focus{border-color:var(--green);box-shadow:0 0 0 3px #07865316}.search-grid .btn{height:45px;white-space:nowrap}
+    .trust{display:grid;grid-template-columns:repeat(5,1fr);padding:30px 0 38px}.trust-item{text-align:center;padding:10px 15px;border-right:1px solid var(--line)}.trust-item:last-child{border:0}.trust-icon{font-size:25px;color:var(--green);margin-bottom:9px}.trust-item strong{display:block;font-size:13px;margin-bottom:7px}.trust-item p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
+    .section{padding:22px 0 54px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section h2{font-family:Manrope,sans-serif;font-size:29px;letter-spacing:-1px;margin:0 0 7px}.section-head p{margin:0;color:var(--muted);font-size:13px}.text-link{color:var(--green);font-size:13px;font-weight:800;white-space:nowrap}.property-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.property-card{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}.property-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.property-photo{height:185px;position:relative;background:#e8edf0 center/cover no-repeat}.badge{position:absolute;top:12px;left:12px;background:var(--green);color:white;padding:6px 10px;border-radius:7px;font-size:10px;font-weight:800}.heart{position:absolute;right:12px;top:10px;width:32px;height:32px;border-radius:50%;background:#fff;border:0;font-size:18px;cursor:pointer;color:#24364a}.property-body{padding:15px}.property-body h3{font-size:14px;margin:0 0 10px;line-height:1.35}.location{font-size:12px;color:var(--muted);margin-bottom:12px}.price{font-size:15px;color:var(--green);font-weight:800;margin-bottom:14px}.price small{font-size:11px;font-weight:600;color:var(--muted)}.specs{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid #edf0f3;padding-top:12px;color:#526276;font-size:11px}.specs span{white-space:nowrap}.card-actions{display:flex;gap:8px;margin-top:14px}.card-actions .btn{padding:10px 11px;flex:1;font-size:11px}.empty{display:none;padding:28px;text-align:center;background:#f7faf8;border:1px dashed #c9d8d0;border-radius:12px;color:var(--muted)}
+    .owner-band{background:linear-gradient(120deg,#082b27,#0a6847);color:#fff;border-radius:18px;padding:34px 38px;display:flex;align-items:center;justify-content:space-between;gap:26px;margin-bottom:60px}.owner-band h2{font-size:25px;margin:0 0 9px;letter-spacing:-.8px}.owner-band p{font-size:13px;color:#d4e7de;line-height:1.65;margin:0;max-width:600px}.owner-band .btn{background:white;color:#08754b;white-space:nowrap}
+    footer{background:#101f2d;color:#eaf0f4;padding:42px 0 18px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:36px}.footer-brand .brand{color:white}.footer-brand p{font-size:12px;color:#afbdc8;line-height:1.7;max-width:260px}.footer-col h4{font-size:12px;margin:4px 0 16px}.footer-col a,.footer-col p{display:block;font-size:12px;color:#b8c5cf;margin:0 0 11px}.footer-col a:hover{color:#60dba7}.footer-bottom{border-top:1px solid #30404c;margin-top:28px;padding-top:17px;display:flex;justify-content:space-between;gap:15px;color:#9eafbb;font-size:11px}
+    .wa-float{position:fixed;right:20px;bottom:20px;z-index:8;background:#20b968;color:#fff;border-radius:50px;padding:13px 17px;display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;box-shadow:0 7px 24px #071c1533}.wa-float:hover{background:#119d53}.notice{font-size:11px;color:#7b8794;line-height:1.5;margin-top:16px}
 
-    * { box-sizing: border-box; }
+    .account-section{padding:10px 0 42px}.account-panel{border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff;box-shadow:var(--shadow)}.account-panel h2{font-family:Manrope,sans-serif;margin:0 0 8px;font-size:25px}.account-panel p{color:var(--muted);font-size:13px;line-height:1.6}.auth-grid,.listing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.account-form{border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:16px}.account-form h3{margin:0 0 12px;font-size:16px}.account-form label{display:block;font-size:12px;font-weight:800;margin:0 0 6px}.account-form input,.account-form select,.account-form textarea{width:100%;border:1px solid #dfe5eb;border-radius:8px;padding:11px;margin-bottom:12px;background:#fff;color:var(--ink)}.account-form textarea{min-height:90px;resize:vertical}.account-form .btn{margin-top:3px}.account-message{font-size:13px;font-weight:700;padding:10px 12px;border-radius:8px;background:#f2f7f4;color:#1d6547;display:none;margin:12px 0}.account-message.error{background:#fff1f0;color:#9b2828}.signed-in-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#f2f8f4;padding:14px;border-radius:10px;margin:12px 0}.listing-form[hidden],#listingArea[hidden],#authForms[hidden]{display:none!important}.photo-hint{font-size:11px!important;margin-top:-6px}.property-photo img{width:100%;height:100%;object-fit:cover;display:block}.property-photo{overflow:hidden}.loading-note{padding:22px;color:var(--muted);font-size:13px}
+    @media(max-width:680px){.auth-grid,.listing-grid{grid-template-columns:1fr}.account-panel{padding:16px}.account-form{padding:14px}}
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: "DM Sans", sans-serif;
-      color: var(--navy);
-      background: var(--white);
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    .wrap {
-      width: min(1160px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    .topbar {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-family: Manrope, sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.7px;
-    }
-
-    .brand span { color: var(--gold); }
-
-    .navlinks {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 19px;
-      border: none;
-      border-radius: 9px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--navy);
-      color: white;
-    }
-
-    .btn-outline {
-      background: white;
-      color: var(--navy);
-      border: 1px solid var(--border);
-    }
-
-    .hero {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(7, 21, 38, 0.88),
-          rgba(7, 21, 38, 0.35)
-        ),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 100px 0 120px;
-    }
-
-    .hero h1 {
-      font-family: Manrope, sans-serif;
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.1;
-      max-width: 680px;
-      margin: 0 0 20px;
-      letter-spacing: -2px;
-    }
-
-    .hero h1 span { color: #e5c78e; }
-
-    .hero p {
-      max-width: 540px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #edf1f5;
-    }
-
-    .search-panel {
-      position: relative;
-      margin-top: -55px;
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 12px 36px rgba(19,38,60,.12);
-    }
-
-    .search-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .field input, .field select {
-      width: 100%;
-      height: 46px;
-      padding: 0 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: white;
-    }
-
-    .section { padding: 65px 0; }
-
-    .section h2 {
-      font-family: Manrope, sans-serif;
-      font-size: 30px;
-      margin: 0 0 12px;
-    }
-
-    .section p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .property-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 28px;
-    }
-
-    .property-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: transform .2s;
-    }
-
-    .property-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .property-card img {
-      width: 100%;
-      height: 215px;
-      object-fit: cover;
-    }
-
-    .property-body { padding: 18px; }
-
-    .property-body h3 {
-      font-size: 17px;
-      margin: 0 0 10px;
-    }
-
-    .price {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--navy);
-      margin: 14px 0;
-    }
-
-    .owner-band {
-      background: var(--navy);
-      color: white;
-      padding: 40px;
-      border-radius: 18px;
-    }
-
-    .owner-band p { color: #dce5ed; }
-
-    footer {
-      background: var(--navy-dark);
-      color: white;
-      padding: 40px 0;
-      margin-top: 40px;
-    }
-
-    footer p { color: #bac5cf; }
-
-    @media (max-width: 800px) {
-      .search-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .property-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 550px) {
-      .search-grid, .property-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { padding: 70px 0 110px; }
-      .navlinks { gap: 12px; }
-    }
+    @media(max-width:1000px){.navlinks{gap:15px}.search-grid{grid-template-columns:repeat(2,1fr)}.search-grid .btn{grid-column:span 2}.property-grid{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:repeat(3,1fr);row-gap:15px}.trust-item:nth-child(3){border-right:0}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.wrap{width:min(100% - 28px,1160px)}.topbar{height:68px}.brand{font-size:17px}.brand-mark{width:35px;height:35px}.navlinks,.nav-actions{display:none}.mobile-menu{display:block}.hero{min-height:400px;background-position:58% center}.hero-content{padding:48px 0 84px}.hero h1{font-size:42px;letter-spacing:-1.6px}.hero p{font-size:14px}.search-panel{padding:15px;margin-top:-48px}.search-grid{grid-template-columns:1fr 1fr;gap:10px}.search-grid .btn{grid-column:span 2}.field select,.field input{font-size:12px;padding:0 8px}.trust{grid-template-columns:repeat(2,1fr);padding:24px 0}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:14px 8px}.trust-item:last-child{grid-column:span 2;border-bottom:0}.section{padding-bottom:38px}.section h2{font-size:24px}.section-head{align-items:start}.property-grid{grid-template-columns:1fr;gap:14px}.property-photo{height:220px}.owner-band{padding:25px;display:block;margin-bottom:40px}.owner-band .btn{margin-top:18px}.footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-brand{grid-column:span 2}.footer-bottom{display:block;line-height:1.8}.wa-float{right:13px;bottom:13px;padding:12px 14px}}
   </style>
 </head>
-
 <body>
-
   <header class="topbar">
     <div class="wrap nav">
-      <a href="#" class="brand">
-        Abuja <span>Properties</span> Hub
-      </a>
-
-      <nav class="navlinks">
-        <a href="#">Home</a>
-        <a href="#properties">Properties</a>
-        <a href="#account">My Account</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="brand" href="#" aria-label="Abuja Properties Hub home"><span class="brand-mark">⌂</span><span>Abuja<span><em>Properties</em></span> Hub<div class="tagline">RENT · BUY · INVEST</div></span></a>
+      <nav class="navlinks" aria-label="Main navigation"><a href="#">Home</a><a href="#properties">Properties</a><a href="#landlords">Landlords & Agents</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
+      <div class="nav-actions"><a class="btn btn-light" href="#properties">Explore homes</a><a class="btn btn-green" href="#account">Account / List</a></div>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation" onclick="document.getElementById('mobileLinks').hidden=!document.getElementById('mobileLinks').hidden">☰</button>
     </div>
   </header>
+  <nav id="mobileLinks" hidden style="padding:14px 20px;background:#fff;border-bottom:1px solid #eee;position:relative;z-index:4"><a href="#properties">Properties</a>　<a href="#landlords">List a property</a>　<a href="#contact">Contact</a></nav>
 
   <main>
-
     <section class="hero">
-      <div class="wrap">
-        <h1>
-          Find your perfect
-          <span>home in Abuja.</span>
-        </h1>
-
-        <p>
-          Discover beautiful homes, apartments,
-          land and investment properties.
-          Connect directly with landlords,
-          agents and real estate companies.
-        </p>
-
-        <a href="#properties" class="btn btn-outline">
-          Explore Properties
-        </a>
+      <div class="wrap hero-content">
+        <div class="eyebrow">Your Abuja property search starts here</div>
+        <h1>Find your next home<br>in <span>Abuja.</span></h1>
+        <p>Discover homes to rent, properties to buy, and connect with landlords and agents across Abuja — all in one place.</p>
       </div>
     </section>
 
-    <div class="wrap">
-      <section class="search-panel">
-        <h2>Find Your Next Property</h2>
+    <section class="wrap search-panel" aria-label="Search properties">
+      <div class="search-tabs"><button class="tab active" data-mode="rent">⌂　Rent</button><button class="tab" data-mode="buy">▦　Buy</button></div>
+      <form id="searchForm" class="search-grid">
+        <div class="field"><label for="type">PROPERTY TYPE</label><select id="type"><option value="">Any type</option><option>Self-contained</option><option>Mini flat</option><option>Apartment</option><option>Duplex</option><option>Detached house</option><option>Land</option><option>Commercial</option></select></div>
+        <div class="field"><label for="location">LOCATION IN ABUJA</label><select id="location"><option value="">Any location</option><option>Gwarinpa</option><option>Jabi</option><option>Wuse 2</option><option>Asokoro</option><option>Life Camp</option><option>Lokogoma</option><option>Maitama</option><option>Lugbe</option><option>Kubwa</option><option>Guzape</option></select></div>
+        <div class="field"><label for="budget">MAXIMUM BUDGET (₦)</label><select id="budget"><option value="">Any budget</option><option value="500000">₦500,000</option><option value="1000000">₦1,000,000</option><option value="2000000">₦2,000,000</option><option value="5000000">₦5,000,000</option><option value="20000000">₦20,000,000</option><option value="50000000">₦50,000,000</option><option value="100000000">₦100,000,000</option></select></div>
+        <div class="field"><label for="beds">BEDROOMS</label><select id="beds"><option value="">Any</option><option value="1">1 bedroom</option><option value="2">2 bedrooms</option><option value="3">3 bedrooms</option><option value="4">4 bedrooms</option><option value="5">5+ bedrooms</option></select></div>
+        <button class="btn btn-green" type="submit">⌕　Search properties</button>
+      </form>
+    </section>
 
-        <form id="searchForm" class="search-grid">
+    <section class="wrap trust" id="about">
+      <div class="trust-item"><div class="trust-icon">♢</div><strong>Careful Listing Review</strong><p>We encourage clear details and checks before payment.</p></div>
+      <div class="trust-item"><div class="trust-icon">♧</div><strong>Direct Enquiries</strong><p>Contact our team on WhatsApp for help with a listing.</p></div>
+      <div class="trust-item"><div class="trust-icon">⌖</div><strong>Abuja Focused</strong><p>Explore properties across Abuja neighbourhoods.</p></div>
+      <div class="trust-item"><div class="trust-icon">◇</div><strong>Safety Comes First</strong><p>Inspect properties and verify ownership before paying.</p></div>
+      <div class="trust-item"><div class="trust-icon">☏</div><strong>Friendly Support</strong><p>Need help? Send us an enquiry anytime.</p></div>
+    </section>
 
-          <div class="field">
-            <label for="searchLocation">Location</label>
-            <input
-              id="searchLocation"
-              list="locationSuggestions"
-              placeholder="Type any location in Abuja"
-            >
-
-            <datalist id="locationSuggestions">
-              <option value="Maitama">
-              <option value="Asokoro">
-              <option value="Wuse">
-              <option value="Gwarinpa">
-              <option value="Kubwa">
-              <option value="Lugbe">
-              <option value="Katampe">
-              <option value="Jabi">
-              <option value="Lokogoma">
-              <option value="Life Camp">
-            </datalist>
-          </div>
-
-          <div class="field">
-            <label for="searchType">Property Type</label>
-            <input
-              id="searchType"
-              list="propertySuggestions"
-              placeholder="Any property type"
-            >
-
-            <datalist id="propertySuggestions">
-              <option value="Apartment">
-              <option value="Duplex">
-              <option value="Detached house">
-              <option value="Self-contained">
-              <option value="Land">
-              <option value="Commercial">
-            </datalist>
-          </div>
-
-          <div class="field">
-            <label for="searchBudget">Maximum Budget (₦)</label>
-            <input
-              id="searchBudget"
-              type="number"
-              min="0"
-              placeholder="Enter your budget"
-            >
-          </div>
-
-          <div class="field">
-            <label for="searchBedrooms">Bedrooms</label>
-            <input
-              id="searchBedrooms"
-              type="number"
-              min="0"
-              placeholder="Any number"
-            >
-          </div>
-
-          <button type="submit" class="btn btn-primary">
-            Search Properties
-          </button>
-
-        </form>
-      </section>
-    </div>
+    <section class="wrap account-section" id="account">
+      <div class="account-panel">
+        <h2>Agent & landlord portal</h2>
+        <p>Create an account to publish your Abuja rental or sale property. Use an email address you can access; Supabase may ask you to confirm it before signing in.</p>
+        <div class="account-message" id="accountMessage" role="status" aria-live="polite"></div>
+        <div id="authForms" class="auth-grid">
+          <form id="signUpForm" class="account-form">
+            <h3>Create an account</h3>
+            <label for="signupEmail">Email address</label><input id="signupEmail" type="email" autocomplete="email" required placeholder="you@example.com">
+            <label for="signupPassword">Password (at least 8 characters)</label><input id="signupPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Create a strong password">
+            <button class="btn btn-green" type="submit">Create account</button>
+          </form>
+          <form id="signInForm" class="account-form">
+            <h3>Already registered?</h3>
+            <label for="signinEmail">Email address</label><input id="signinEmail" type="email" autocomplete="email" required placeholder="you@example.com">
+            <label for="signinPassword">Password</label><input id="signinPassword" type="password" autocomplete="current-password" required placeholder="Your password">
+            <button class="btn btn-light" type="submit">Sign in</button>
+          </form>
+        </div>
+        <div id="signedInBar" class="signed-in-bar" hidden><span>Signed in as <strong id="signedInEmail"></strong></span><button class="btn btn-light" id="signOutBtn" type="button">Sign out</button></div>
+        <div id="listingArea" hidden>
+          <form id="listingForm" class="account-form listing-form">
+            <h3>Publish a property</h3>
+            <div class="listing-grid">
+              <div><label for="listingTitle">Listing title</label><input id="listingTitle" required maxlength="120" placeholder="e.g. 2 Bedroom Flat in Gwarinpa"></div>
+              <div><label for="listingMode">I want to</label><select id="listingMode" required><option value="rent">Rent out</option><option value="sale">Sell</option></select></div>
+              <div><label for="listingType">Property type</label><select id="listingType" required><option>Self-contained</option><option>Mini flat</option><option>Apartment</option><option>Duplex</option><option>Detached house</option><option>Land</option><option>Commercial</option><option>Other</option></select></div>
+              <div><label for="listingLocation">Location in Abuja</label><input id="listingLocation" required maxlength="100" placeholder="e.g. Lugbe, Abuja"></div>
+              <div><label for="listingPrice">Price in naira (₦)</label><input id="listingPrice" type="number" min="0" step="1" required placeholder="e.g. 1800000"></div>
+              <div><label for="listingWhatsApp">Your WhatsApp number</label><input id="listingWhatsApp" type="tel" required maxlength="20" placeholder="e.g. 08012345678"></div>
+              <div><label for="listingBeds">Bedrooms</label><input id="listingBeds" type="number" min="0" max="100" value="1" required></div>
+              <div><label for="listingBaths">Bathrooms</label><input id="listingBaths" type="number" min="0" max="100" value="1" required></div>
+            </div>
+            <label for="listingDescription">Description</label><textarea id="listingDescription" maxlength="3000" placeholder="Describe the property, nearby landmarks and any important terms."></textarea>
+            <label for="listingPhotos">Property photos (up to 5 images)</label><input id="listingPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple required>
+            <p class="photo-hint">Use photos you have permission to publish. JPEG, PNG or WebP only; maximum 5 images, each up to 5 MB.</p>
+            <button class="btn btn-green" id="publishBtn" type="submit">Upload photos & publish listing</button>
+          </form>
+          <h3>Your listings</h3><div id="myListings" class="property-grid"><p class="loading-note">Loading your listings…</p></div>
+        </div>
+      </div>
+    </section>
 
     <section class="section wrap" id="properties">
-      <h2>Explore Properties</h2>
-      <p>
-        Browse properties available for rent and sale
-        across Abuja.
-      </p>
-
-      <div class="property-grid" id="propertyGrid">
-        <p>Loading properties...</p>
-      </div>
-
-      <div id="emptyState" hidden>
-        No properties match your search.
-      </div>
+      <div class="section-head"><div><h2>Featured properties</h2><p>Explore homes and land in Abuja.</p></div><a class="text-link" href="#properties" id="viewAll">View all properties →</a></div>
+      <div class="property-grid" id="propertyGrid"><p class="loading-note">Loading published properties…</p></div>
+      <div class="empty" id="emptyState">No published properties match those filters yet. Try another search or check back soon.</div>
+      <p class="notice">Always inspect a property and verify ownership or the agent’s authority before paying any money. Listings are supplied by users and are not automatically verified.</p>
     </section>
 
     <section class="wrap" id="landlords">
-      <div class="owner-band">
-        <h2>Own a Property in Abuja?</h2>
-
-        <p>
-          Create a free account, upload property photos,
-          manage your listings and connect with buyers
-          and tenants directly.
-        </p>
-
-        <a href="#account" class="btn btn-outline">
-          List Your Property for Free
-        </a>
-      </div>
+      <div class="owner-band"><div><h2>Have a property in Abuja?</h2><p>Reach people searching for a place to rent or a property to buy. Send us your property details on WhatsApp and our team will help you with the next steps.</p></div><a class="btn" href="https://wa.me/2348137272792?text=Hello%20Abuja%20Properties%20Hub%2C%20I%20want%20to%20list%20a%20property.%20Please%20tell%20me%20the%20requirements." target="_blank" rel="noopener">＋ List your property on WhatsApp</a></div>
     </section>
-
-    <!-- Account and property upload forms go here -->
-
   </main>
 
   <footer id="contact">
     <div class="wrap">
-      <h3>Abuja Properties Hub</h3>
-
-      <p>
-        Find homes, land and investment opportunities
-        across Abuja, Nigeria.
-      </p>
-
-      <a
-        href="https://wa.me/2348137272792"
-        target="_blank"
-        rel="noopener"
-      >
-        Contact Us on WhatsApp
-      </a>
-
-      <p>© 2026 Abuja Properties Hub</p>
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="brand" href="#"><span class="brand-mark">⌂</span><span>Abuja<span><em>Properties</em></span> Hub<div class="tagline">RENT · BUY · INVEST</div></span></a><p>Your starting point for finding homes and property opportunities across Abuja, Nigeria.</p></div>
+        <div class="footer-col"><h4>QUICK LINKS</h4><a href="#">Home</a><a href="#properties">Browse properties</a><a href="#landlords">List a property</a><a href="#about">About us</a></div>
+        <div class="footer-col"><h4>PROPERTY TYPES</h4><a href="#properties">Apartments</a><a href="#properties">Houses & duplexes</a><a href="#properties">Land</a><a href="#properties">Commercial property</a></div>
+        <div class="footer-col"><h4>CONTACT THE OWNER</h4><a href="https://wa.me/2348137272792" target="_blank" rel="noopener">WhatsApp: +234 813 727 2792</a><a href="https://wa.me/2348137272792?text=Hello%20Abuja%20Properties%20Hub%2C%20I%20have%20a%20property%20enquiry." target="_blank" rel="noopener">Send an enquiry ↗</a><p>Abuja, Nigeria</p></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Abuja Properties Hub. All rights reserved.</span><span>Find your next home with confidence.</span></div>
     </div>
   </footer>
+  <a class="wa-float" href="https://wa.me/2348137272792?text=Hello%20Abuja%20Properties%20Hub%2C%20I%20have%20a%20property%20enquiry." target="_blank" rel="noopener" aria-label="Contact Abuja Properties Hub on WhatsApp">◉ WhatsApp enquiry</a>
 
-  <!-- Supabase functionality will be added in the next part -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Replace these two placeholders with your Supabase Project URL and public anon/publishable key. Never use a service_role/secret key here.
+    const SUPABASE_URL = "https://ctpuwwehtjjurnzlfyav.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN0cHV3d2VodGpqdXJuemxmeWF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIzODAxNTcsImV4cCI6MjEwNzk1NjE1N30.JeSqJ2XT3ngIxLJfOiwa6xISLjPvN8GijbQwwPY6kus";
+    let mode = "rent";
+    const tabs = [...document.querySelectorAll(".tab")];
+    const accountMessage = document.getElementById("accountMessage");
+    const authForms = document.getElementById("authForms");
+    const signedInBar = document.getElementById("signedInBar");
+    const listingArea = document.getElementById("listingArea");
+    const propertyGrid = document.getElementById("propertyGrid");
+    const emptyState = document.getElementById("emptyState");
+    let supabaseClient = null;
+    let currentUser = null;
+    let allProperties = [];
 
+    function showMessage(message, isError=false) {
+      accountMessage.textContent = message;
+      accountMessage.classList.toggle("error", isError);
+      accountMessage.style.display = "block";
+    }
+    function clearMessage() { accountMessage.textContent = ""; accountMessage.style.display = "none"; accountMessage.classList.remove("error"); }
+    function escapeHtml(value) { return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+    function formatNaira(value) { return new Intl.NumberFormat("en-NG", {style:"currency",currency:"NGN",maximumFractionDigits:0}).format(Number(value || 0)); }
+    function cleanWhatsApp(value) { return String(value || "").replace(/\D/g, "").replace(/^0/, "234"); }
+    function photoUrl(p) { return Array.isArray(p.image_urls) && p.image_urls.length ? p.image_urls[0] : "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"; }
+    function renderPropertyCard(p) {
+      const type = p.property_type || "Property";
+      const location = p.location || "Abuja";
+      const isRent = p.listing_type === "rent";
+      const beds = Number(p.bedrooms || 0);
+      const baths = Number(p.bathrooms || 0);
+      const phone = cleanWhatsApp(p.whatsapp);
+      const text = encodeURIComponent(`Hello, I am interested in ${p.title} in ${location} listed on Abuja Properties Hub. Please send me more details.`);
+      const article = document.createElement("article");
+      article.className = "property-card";
+      article.dataset.mode = isRent ? "rent" : "buy";
+      article.dataset.type = type;
+      article.dataset.location = location;
+      article.dataset.price = String(p.price || 0);
+      article.dataset.beds = String(beds);
+      article.dataset.searchText = `${p.title} ${type} ${location}`.toLowerCase();
+      article.innerHTML = `
+        <div class="property-photo"><img loading="lazy" src="${escapeHtml(photoUrl(p))}" alt="${escapeHtml(p.title)}"><span class="badge">${isRent ? "FOR RENT" : "FOR SALE"}</span></div>
+        <div class="property-body"><h3>${escapeHtml(p.title)}</h3><div class="location">⌖ ${escapeHtml(location)}</div>
+        <div class="price">${formatNaira(p.price)} ${isRent ? '<small>/ year (confirm with owner)</small>' : ''}</div>
+        <div class="specs"><span>▣ ${beds} Beds</span><span>♨ ${baths} Baths</span><span>${escapeHtml(type)}</span></div>
+        ${p.description ? `<p style="font-size:12px;line-height:1.55;color:#66758a">${escapeHtml(p.description)}</p>` : ""}
+        <div class="card-actions"><a class="btn btn-light" href="https://wa.me/${phone}?text=${text}" target="_blank" rel="noopener">Enquire</a><a class="btn btn-green" href="https://wa.me/${phone}?text=${text}" target="_blank" rel="noopener">WhatsApp ↗</a></div></div>`;
+      return article;
+    }
+    function applyFilters(scroll=false) {
+      const type = document.getElementById("type").value.toLowerCase();
+      const location = document.getElementById("location").value.toLowerCase();
+      const budget = Number(document.getElementById("budget").value || 0);
+      const beds = document.getElementById("beds").value;
+      const cards = [...propertyGrid.querySelectorAll(".property-card")];
+      let shown = 0;
+      cards.forEach(card => {
+        const matches = card.dataset.mode === mode &&
+          (!type || card.dataset.type.toLowerCase() === type) &&
+          (!location || card.dataset.location.toLowerCase().includes(location)) &&
+          (!budget || Number(card.dataset.price) <= budget) &&
+          (!beds || Number(card.dataset.beds) >= Number(beds));
+        card.style.display = matches ? "" : "none";
+        if (matches) shown++;
+      });
+      emptyState.style.display = shown ? "none" : "block";
+      if (scroll) document.getElementById("properties").scrollIntoView({behavior:"smooth",block:"start"});
+    }
+    async function loadProperties() {
+      if (!supabaseClient) { propertyGrid.innerHTML = '<p class="loading-note">Website setup needed: add your Supabase project URL and public key in this file.</p>'; return; }
+      propertyGrid.innerHTML = '<p class="loading-note">Loading published properties…</p>';
+      const {data,error} = await supabaseClient.from("properties").select("id,title,description,listing_type,property_type,location,price,bedrooms,bathrooms,whatsapp,image_urls,created_at").eq("status","published").order("created_at",{ascending:false});
+      if (error) { propertyGrid.innerHTML = '<p class="loading-note">Could not load listings. Please check the Supabase connection and database policies.</p>'; console.error(error); return; }
+      allProperties = data || [];
+      propertyGrid.replaceChildren(...allProperties.map(renderPropertyCard));
+      applyFilters(false);
+      if (!allProperties.length) emptyState.style.display = "block";
+    }
+    async function loadMyListings() {
+      const host = document.getElementById("myListings");
+      if (!currentUser || !supabaseClient) return;
+      host.innerHTML = '<p class="loading-note">Loading your listings…</p>';
+      const {data,error} = await supabaseClient.from("properties").select("id,title,listing_type,location,price,status,created_at").eq("owner_id",currentUser.id).order("created_at",{ascending:false});
+      if (error) { host.innerHTML = '<p class="loading-note">Unable to load your listings.</p>'; console.error(error); return; }
+      if (!data.length) { host.innerHTML = '<p class="loading-note">You have not published a property yet. Use the form above to add your first listing.</p>'; return; }
+      host.innerHTML = data.map(p => `<article class="property-card"><div class="property-body"><h3>${escapeHtml(p.title)}</h3><div class="location">${escapeHtml(p.location)}</div><div class="price">${formatNaira(p.price)}</div><div class="specs"><span>${p.listing_type === "rent" ? "For rent" : "For sale"}</span><span>${escapeHtml(p.status)}</span></div></div></article>`).join("");
+    }
+    function updateAuthUI(session) {
+      currentUser = session?.user || null;
+      authForms.hidden = !!currentUser;
+      signedInBar.hidden = !currentUser;
+      listingArea.hidden = !currentUser;
+      if (currentUser) {
+        document.getElementById("signedInEmail").textContent = currentUser.email || "Account";
+        loadMyListings();
+      }
+    }
+
+    tabs.forEach(tab => tab.addEventListener("click", () => {
+      mode = tab.dataset.mode;
+      tabs.forEach(t => t.classList.toggle("active", t === tab));
+      document.getElementById("budget").value = "";
+      applyFilters(false);
+    }));
+    document.getElementById("searchForm").addEventListener("submit", event => { event.preventDefault(); applyFilters(true); });
+    document.getElementById("viewAll").addEventListener("click", e => {
+      e.preventDefault();
+      document.getElementById("type").value = "";
+      document.getElementById("location").value = "";
+      document.getElementById("budget").value = "";
+      document.getElementById("beds").value = "";
+      applyFilters(false);
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("signUpForm").addEventListener("submit", async e => {
+      e.preventDefault(); clearMessage();
+      if (!supabaseClient) return showMessage("Add your Supabase project URL and public key to the website first.", true);
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value;
+      const {data,error} = await supabaseClient.auth.signUp({email,password,options:{emailRedirectTo:window.location.origin}});
+      if (error) return showMessage(error.message, true);
+      if (data.session) { updateAuthUI(data.session); showMessage("Account created and signed in. You can now publish a property."); }
+      else showMessage("Account created. Check your email for the confirmation link, then return here and sign in.");
+      e.target.reset();
+    });
+    document.getElementById("signInForm").addEventListener("submit", async e => {
+      e.preventDefault(); clearMessage();
+      if (!supabaseClient) return showMessage("Add your Supabase project URL and public key to the website first.", true);
+      const email = document.getElementById("signinEmail").value.trim();
+      const password = document.getElementById("signinPassword").value;
+      const {data,error} = await supabaseClient.auth.signInWithPassword({email,password});
+      if (error) return showMessage(error.message, true);
+      updateAuthUI(data.session); showMessage("You are signed in. You can now publish a property."); e.target.reset();
+    });
+    document.getElementById("signOutBtn").addEventListener("click", async () => {
+      clearMessage(); const {error} = await supabaseClient.auth.signOut();
+      if (error) return showMessage(error.message,true);
+      updateAuthUI(null); showMessage("You have signed out.");
+    });
+    document.getElementById("listingForm").addEventListener("submit", async e => {
+      e.preventDefault(); clearMessage();
+      if (!currentUser || !supabaseClient) return showMessage("Please sign in again before publishing.",true);
+      const files = [...document.getElementById("listingPhotos").files];
+      if (!files.length || files.length > 5) return showMessage("Choose between 1 and 5 property photos.",true);
+      const allowed = ["image/jpeg","image/png","image/webp"];
+      if (files.some(f => !allowed.includes(f.type) || f.size > 5*1024*1024)) return showMessage("Each photo must be JPEG, PNG or WebP and no larger than 5 MB.",true);
+      const publishBtn = document.getElementById("publishBtn"); publishBtn.disabled = true; publishBtn.textContent = "Uploading photos…";
+      const urls = [];
+      try {
+        for (const file of files) {
+          const ext = file.type === "image/jpeg" ? "jpg" : file.type.split("/")[1];
+          const path = `${currentUser.id}/${crypto.randomUUID()}.${ext}`;
+          const {error:uploadError} = await supabaseClient.storage.from("property-photos").upload(path,file,{contentType:file.type,upsert:false});
+          if (uploadError) throw uploadError;
+          const {data:urlData} = supabaseClient.storage.from("property-photos").getPublicUrl(path);
+          urls.push(urlData.publicUrl);
+        }
+        const listing = {
+          owner_id: currentUser.id,
+          title: document.getElementById("listingTitle").value.trim(),
+          description: document.getElementById("listingDescription").value.trim(),
+          listing_type: document.getElementById("listingMode").value,
+          property_type: document.getElementById("listingType").value,
+          location: document.getElementById("listingLocation").value.trim(),
+          price: Number(document.getElementById("listingPrice").value),
+          bedrooms: Number(document.getElementById("listingBeds").value),
+          bathrooms: Number(document.getElementById("listingBaths").value),
+          whatsapp: cleanWhatsApp(document.getElementById("listingWhatsApp").value),
+          image_urls: urls,
+          status: "published"
+        };
+        if (listing.whatsapp.length < 10 || listing.whatsapp.length > 15) throw new Error("Enter a valid WhatsApp number, including country code if needed.");
+        const {error:insertError} = await supabaseClient.from("properties").insert(listing);
+        if (insertError) throw insertError;
+        e.target.reset(); document.getElementById("listingBeds").value = "1"; document.getElementById("listingBaths").value = "1";
+        showMessage("Property published successfully! It should now appear in Featured properties.");
+        await loadProperties(); await loadMyListings();
+        document.getElementById("properties").scrollIntoView({behavior:"smooth",block:"start"});
+      } catch (err) {
+        console.error(err); showMessage(`Could not publish the property: ${err.message || "Please check your setup and try again."}`,true);
+      } finally { publishBtn.disabled = false; publishBtn.textContent = "Upload photos & publish listing"; }
+    });
+
+    if (SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("YOUR_") && SUPABASE_ANON_KEY && !SUPABASE_ANON_KEY.includes("YOUR_")) {
+      supabaseClient = window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+      supabaseClient.auth.getSession().then(({data}) => updateAuthUI(data.session));
+      supabaseClient.auth.onAuthStateChange((_event,session) => updateAuthUI(session));
+      loadProperties();
+    } else {
+      propertyGrid.innerHTML = '<p class="loading-note">Connect your Supabase project to load real listings. The account form is ready once the project keys are added.</p>';
+      emptyState.style.display = "none";
+    }
+  </script>
 </body>
 </html>
-
-<!-- ACCOUNT SECTION -->
-<section class="section wrap" id="account">
-
-  <h2>Property Owner Portal</h2>
-  <p>
-    Create a free account to advertise properties
-    and manage your listings.
-  </p>
-
-  <div id="authPanel">
-
-    <div class="portal-card">
-
-      <h3>Create Your Account</h3>
-
-      <form id="registerForm">
-
-        <div class="field">
-          <label for="registerName">
-            Your Name or Business Name
-          </label>
-          <input
-            id="registerName"
-            type="text"
-            maxlength="120"
-            required
-            placeholder="Enter your name or company name"
-          >
-        </div>
-
-        <div class="field">
-          <label for="registerType">
-            Account Type
-          </label>
-          <select id="registerType" required>
-            <option value="landlord">Landlord</option>
-            <option value="agent">Property Agent</option>
-            <option value="company">Real Estate Company</option>
-            <option value="land_seller">Land Seller</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="registerEmail">Email</label>
-          <input
-            id="registerEmail"
-            type="email"
-            autocomplete="email"
-            required
-          >
-        </div>
-
-        <div class="field">
-          <label for="registerPassword">Password</label>
-          <input
-            id="registerPassword"
-            type="password"
-            minlength="8"
-            autocomplete="new-password"
-            required
-          >
-        </div>
-
-        <button class="btn btn-primary" type="submit">
-          Create Free Account
-        </button>
-
-      </form>
-
-      <p id="registerMessage" role="status"></p>
-
-      <hr>
-
-      <h3>Already Have an Account?</h3>
-
-      <form id="loginForm">
-
-        <div class="field">
-          <label for="loginEmail">Email</label>
-          <input
-            id="loginEmail"
-            type="email"
-            autocomplete="email"
-            required
-          >
-        </div>
-
-        <div class="field">
-          <label for="loginPassword">Password</label>
-          <input
-            id="loginPassword"
-            type="password"
-            autocomplete="current-password"
-            required
-          >
-        </div>
-
-        <button class="btn btn-primary" type="submit">
-          Sign In
-        </button>
-
-      </form>
-
-      <p id="loginMessage" role="status"></p>
-
-    </div>
-  </div>
-
-  <!-- LOGGED-IN DASHBOARD -->
-
-  <div id="dashboardPanel" hidden>
-
-    <div class="portal-card">
-
-      <h3>My Dashboard</h3>
-
-      <p id="signedInUser"></p>
-
-      <button
-        id="logoutButton"
-        type="button"
-        class="btn btn-outline"
-      >
-        Sign Out
-      </button>
-
-      <hr>
-
-      <h3>My Business Profile</h3>
-
-      <form id="profileForm">
-
-        <div class="field">
-          <label for="profileName">
-            Display Name / Company Name
-          </label>
-          <input
-            id="profileName"
-            type="text"
-            maxlength="120"
-            required
-          >
-        </div>
-
-        <div class="field">
-          <label for="profileType">Account Type</label>
-          <select id="profileType" required>
-            <option value="landlord">Landlord</option>
-            <option value="agent">Property Agent</option>
-            <option value="company">Real Estate Company</option>
-            <option value="land_seller">Land Seller</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="profileWhatsapp">
-            Business WhatsApp Number
-          </label>
-          <input
-            id="profileWhatsapp"
-            type="tel"
-            placeholder="08012345678"
-          >
-        </div>
-
-        <div class="field">
-          <label for="profileBio">
-            About Your Business
-          </label>
-          <textarea
-            id="profileBio"
-            rows="4"
-            placeholder="Tell customers about your business"
-          ></textarea>
-        </div>
-
-        <div class="field">
-          <label for="profileLogo">
-            Business Logo
-          </label>
-          <input
-            id="profileLogo"
-            type="file"
-            accept="image/jpeg,image/png,image/webp"
-          >
-        </div>
-
-        <button class="btn btn-primary" type="submit">
-          Save Business Profile
-        </button>
-
-      </form>
-
-      <p id="profileMessage" role="status"></p>
-
-      <div class="field">
-        <label for="catalogueLink">
-          My Shareable Property Catalogue
-        </label>
-
-        <input
-          id="catalogueLink"
-          type="text"
-          readonly
-        >
-
-        <button
-          id="copyCatalogueButton"
-          type="button"
-          class="btn btn-outline"
-        >
-          Copy Catalogue Link
-        </button>
-      </div>
-
-    </div>
-
-    <!-- PROPERTY UPLOAD -->
-
-    <div class="portal-card">
-
-      <h3 id="propertyFormHeading">
-        Upload a New Property
-      </h3>
-
-      <p>
-        Add your property information and photos.
-        Listings are free.
-      </p>
-
-      <form id="propertyForm">
-
-        <input
-          type="hidden"
-          id="editingPropertyId"
-        >
-
-        <div class="field">
-          <label for="propertyTitle">
-            Property Title
-          </label>
-          <input
-            id="propertyTitle"
-            type="text"
-            maxlength="160"
-            required
-            placeholder="Beautiful 3 Bedroom Apartment"
-          >
-        </div>
-
-        <div class="field">
-          <label for="propertyListingType">
-            Listing Category
-          </label>
-          <select id="propertyListingType" required>
-            <option value="rent">For Rent</option>
-            <option value="sale">For Sale</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="propertyType">
-            Property Type
-          </label>
-
-          <input
-            id="propertyType"
-            list="uploadPropertyTypes"
-            required
-            placeholder="Select or type your property type"
-          >
-
-          <datalist id="uploadPropertyTypes">
-            <option value="Apartment">
-            <option value="Duplex">
-            <option value="Detached House">
-            <option value="Terrace">
-            <option value="Bungalow">
-            <option value="Self-contained">
-            <option value="Land">
-            <option value="Commercial Property">
-            <option value="Office Space">
-            <option value="Shop">
-          </datalist>
-        </div>
-
-        <div class="field">
-          <label for="propertyLocation">
-            Exact Property Location
-          </label>
-
-          <input
-            id="propertyLocation"
-            list="uploadLocations"
-            required
-            placeholder="Select or type any Abuja location"
-          >
-
-          <datalist id="uploadLocations">
-            <option value="Maitama">
-            <option value="Asokoro">
-            <option value="Wuse">
-            <option value="Gwarinpa">
-            <option value="Kubwa">
-            <option value="Lugbe">
-            <option value="Katampe">
-            <option value="Jabi">
-            <option value="Lokogoma">
-            <option value="Life Camp">
-          </datalist>
-        </div>
-
-        <div class="field">
-          <label for="propertyPrice">
-            Property Price in Naira (₦)
-          </label>
-          <input
-            id="propertyPrice"
-            type="number"
-            min="0"
-            step="1"
-            required
-            placeholder="2500000"
-          >
-        </div>
-
-        <div class="field">
-          <label for="propertyBedrooms">
-            Number of Bedrooms
-          </label>
-          <input
-            id="propertyBedrooms"
-            type="number"
-            min="0"
-            step="1"
-            placeholder="Enter number of bedrooms"
-          >
-        </div>
-
-        <div class="field">
-          <label for="propertyBathrooms">
-            Number of Bathrooms
-          </label>
-          <input
-            id="propertyBathrooms"
-            type="number"
-            min="0"
-            step="1"
-            placeholder="Enter number of bathrooms"
-          >
-        </div>
-
-        <div class="field">
-          <label for="propertyDescription">
-            Property Description
-          </label>
-          <textarea
-            id="propertyDescription"
-            rows="5"
-            placeholder="Describe the property and its features"
-          ></textarea>
-        </div>
-
-        <div class="field">
-          <label for="propertyWhatsapp">
-            Contact WhatsApp Number
-          </label>
-          <input
-            id="propertyWhatsapp"
-            type="tel"
-            required
-            placeholder="08012345678"
-          >
-        </div>
-
-        <div class="field">
-          <label for="propertyPhotos">
-            Upload Property Photos
-          </label>
-
-          <div class="upload-zone">
-            <p>Choose clear photos of your property</p>
-
-            <input
-              id="propertyPhotos"
-              type="file"
-              accept="image/jpeg,image/png,image/webp"
-              multiple
-            >
-
-            <small>
-              Maximum 5 photos.
-              Maximum 5 MB per photo.
-            </small>
-          </div>
-
-          <div
-            id="photoPreview"
-            class="photo-preview"
-          ></div>
-        </div>
-
-        <button
-          id="publishPropertyButton"
-          class="btn btn-primary"
-          type="submit"
-        >
-          Publish Property
-        </button>
-
-        <button
-          id="cancelEditButton"
-          class="btn btn-outline"
-          type="button"
-          hidden
-        >
-          Cancel Editing
-        </button>
-
-      </form>
-
-      <p id="propertyMessage" role="status"></p>
-
-    </div>
-
-    <!-- MY LISTINGS -->
-
-    <div class="portal-card">
-
-      <h3>Manage My Properties</h3>
-
-      <p>
-        Edit, delete, publish or unpublish
-        your properties.
-      </p>
-
-      <div id="myProperties">
-        Loading your properties...
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<style>
-  .portal-card {
-    background: white;
-    border: 1px solid #e5eaf0;
-    border-radius: 16px;
-    padding: 28px;
-    margin: 25px 0;
-    box-shadow: 0 8px 28px rgba(16,36,58,.05);
-  }
-
-  .portal-card h3 {
-    font-family: Manrope, sans-serif;
-    margin-top: 0;
-    font-size: 23px;
-  }
-
-  .portal-card .field {
-    margin-bottom: 20px;
-  }
-
-  .portal-card input,
-  .portal-card select,
-  .portal-card textarea {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #dce3eb;
-    border-radius: 9px;
-    background: white;
-  }
-
-  .portal-card textarea {
-    resize: vertical;
-  }
-
-  .portal-card button {
-    margin: 8px 8px 8px 0;
-  }
-
-  .upload-zone {
-    padding: 25px;
-    border: 2px dashed #c5a46d;
-    border-radius: 14px;
-    background: #f5f3ef;
-    text-align: center;
-  }
-
-  .upload-zone input {
-    background: transparent;
-  }
-
-  .photo-preview {
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(110px, 1fr)
-    );
-    gap: 12px;
-    margin-top: 16px;
-  }
-
-  .photo-preview img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 9px;
-  }
-
-  #registerMessage,
-  #loginMessage,
-  #profileMessage,
-  #propertyMessage {
-    font-size: 14px;
-    margin-top: 12px;
-  }
-
-  @media (max-width: 550px) {
-    .portal-card {
-      padding: 18px;
-    }
-  }
-</style>
